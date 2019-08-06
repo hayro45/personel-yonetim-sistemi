@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+</head>
+<body>
+    @Html.Partial("_Navbar")
+    <div class="container">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/scripts");
+    @RenderSection("scripts",false)
+    
+
+</body>
+</html>

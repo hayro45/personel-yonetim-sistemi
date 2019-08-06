@@ -1,0 +1,44 @@
+﻿@model PersonelMVCUI.Models.EntityFramework.Kullanici
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img height="100" src="~/Content/DataTables/images/90301479-the-face-old-man-profile-avatar-of-the-grandfather-vector-illustration.jpg" alt="User Icon" />
+
+            </div>
+
+            <!-- Login Form -->
+            @ViewBag.Mesaj
+            @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+            {
+                @Html.TextBoxFor(m => m.Ad, new { @class = "fadeIn second", placeholder = "Kullanıcı Adı", id = "login" })
+                @Html.TextBoxFor(m => m.Sifre, new { @class = "fadeIn third", placeholder = "Parola", id = "password" })
+                <input type="submit" class="fadeIn fourth" value="Giriş Yap">
+            }
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
